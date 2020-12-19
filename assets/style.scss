@@ -1,0 +1,74 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 0;
+}
+
+// .box--front {
+//     position: absolute;
+//     bottom: 10%;
+//     left: 10%;
+// }
+.v-application a {
+    // color: rgb(68, 83, 150);
+}
+
+.v-tab {
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+.anime-background {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    width: 800px;
+    height: 450px;
+    background: rgb(68, 83, 150);
+}
+
+.rotate {
+    width: 100px;
+    height: 200px;
+    background: salmon;
+}
+
+.box--container {
+    width: 400px;
+    z-index: 100;
+
+}
+
+.bar{
+    width: 0px;
+    height: 20px;
+    background:rgb(255, 147, 190);
+    position: relative;
+}
+
+h1.xlarge {
+    font-size: 4rem;
+}
+
+.lists {
+    padding: 2rem 0;
+}
+// .theme--light.v-expansion-panels .v-expansion-panel {
+//     border: 1px solid salmon;
+//     border-radius: 0;
+// }
+
+.theme--dark.v-expansion-panels .v-expansion-panel {
+    padding: 1.5rem 1rem;
+}
+
+.v-expansion-panel::before {
+    box-shadow: none;
+}
+
+.menu-link {
+    color: salmon;
+}
