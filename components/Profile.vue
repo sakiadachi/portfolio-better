@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="text-right">
         <v-menu
             v-model="menu"
             :close-on-content-click="false"
@@ -8,55 +8,67 @@
         >
             <template v-slot:activator="{ on, attrs }">
                 <v-btn
-                    color="white"
-                    elevation="4"
-                    x-large
+                    outlined
+                    color="black"
+                    large
                     v-bind="attrs"
-                    class="btn_xlarge"
+                    elevation="0"
                     v-on="on"
                 >
-                    Say Hi to Saki <i style="font-size: 23px">👋</i></v-btn
-                >
+                    <h3>say hi <i style="font-size: 22px">👋</i></h3>
+                </v-btn>
             </template>
 
             <v-card>
-                <v-form v-model="valid">
-                    <v-container>
-                        <v-row>
-                            <v-col cols="12" md="4">
-                                <v-text-field
-                                    v-model="firstname"
-                                    :rules="nameRules"
-                                    :counter="10"
-                                    label="First name"
-                                    required
-                                ></v-text-field>
-                            </v-col>
+                <v-list>
+                    <v-list-item>
+                        <v-list-item-avatar>
+                            <img src="@/assets/img/skateboard.png" alt="Saki" />
+                        </v-list-item-avatar>
 
-                            <v-col cols="12" md="4">
-                                <v-text-field
-                                    v-model="lastname"
-                                    :rules="nameRules"
-                                    :counter="10"
-                                    label="Last name"
-                                    required
-                                ></v-text-field>
-                            </v-col>
+                        <v-list-item-content>
+                            <v-list-item-title>Saki Adachi</v-list-item-title>
+                            <v-list-item-subtitle
+                                >freelance front end
+                                developer</v-list-item-subtitle
+                            >
+                        </v-list-item-content>
 
-                            <v-col cols="12" md="8">
-                                <v-text-field
-                                    v-model="email"
-                                    :rules="emailRules"
-                                    label="E-mail"
-                                    required
-                                ></v-text-field>
-                            </v-col>
-                            <v-col cols="12" md="8">
-                                <v-overflow-btn segmented></v-overflow-btn>
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                </v-form>
+                        <v-list-item-action>
+                            <v-btn
+                                :class="fav ? 'blue--text' : ''"
+                                icon
+                                @click="fav = !fav"
+                            >
+                                <v-icon>mdi-heart</v-icon>
+                            </v-btn>
+                        </v-list-item-action>
+                    </v-list-item>
+                </v-list>
+
+                <v-divider></v-divider>
+
+                <v-list>
+                    <v-list-item>
+                        <v-list-item-title>Email</v-list-item-title>
+                    </v-list-item>
+
+                    <v-list-item>
+                        <v-list-item-action>
+                            <v-switch v-model="hints" color="purple"></v-switch>
+                        </v-list-item-action>
+                        <v-list-item-title>Enable hints</v-list-item-title>
+                    </v-list-item>
+                </v-list>
+
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+
+                    <v-btn text @click="menu = false"> Cancel </v-btn>
+                    <v-btn color="primary" text @click="menu = false">
+                        Save
+                    </v-btn>
+                </v-card-actions>
             </v-card>
         </v-menu>
     </div>
@@ -83,6 +95,8 @@ export default {
                 (v) => !!v || 'E-mail is required',
                 (v) => /.+@.+/.test(v) || 'E-mail must be valid',
             ],
+            select: null,
+            category: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
         }
     },
 }

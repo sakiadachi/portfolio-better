@@ -2,25 +2,38 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', Arial,sans-serif;
 }
 
-.container {
-    padding: 0;
-}
-
-// .box--front {
-//     position: absolute;
-//     bottom: 10%;
-//     left: 10%;
+// main {
+//     background-color: rgb(255, 128, 0);
 // }
-.v-application a {
-    // color: rgb(68, 83, 150);
+// .container {
+//     background-color: rgb(224, 112, 43);
+// }
+
+h1,
+h2, h3, h4,p, a {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
 }
 
-.v-tab {
-    border-right: 1px solid #333;
+h1 {
+    font-size: 50px;
+
+}
+
+.box {
     border-bottom: 1px solid #333;
 }
+
+.box.beige {
+    background:rgb(225, 211, 204)
+}
+.beige {
+    background:rgb(255, 157, 132)
+}
+
 .anime-background {
     display: flex;
     justify-content: center;
@@ -71,4 +84,9 @@ h1.xlarge {
 
 .menu-link {
     color: salmon;
+}
+
+.heading {
+    font-size: 56px;
+    line-height: 1.5;
 }
