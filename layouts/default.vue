@@ -1,26 +1,25 @@
 <template>
     <v-app>
         <v-main>
-            <Header></Header>
-            <!-- <v-container> -->
+            <!-- <Header></Header> -->
+
             <nuxt />
-            <!-- </v-container> -->
         </v-main>
 
-        <v-footer padless :absolute="!fixed" app>
+        <!-- <v-footer padless :absolute="!fixed" app>
             <v-col class="text-center">
                 Saki Adachi <span>&copy; {{ new Date().getFullYear() }}</span>
             </v-col>
-        </v-footer>
+        </v-footer> -->
     </v-app>
 </template>
 
 <script>
-import Header from '@/components/Header'
+// import Header from '@/components/Header'
 
 export default {
     components: {
-        Header,
+        // Header,
     },
     data() {
         return {

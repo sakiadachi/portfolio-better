@@ -12,13 +12,12 @@ export default {
     ],
     link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat'}
     ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-      '~/assets/style.scss'
+      '~/assets/style.scss',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -52,10 +51,16 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      light: {
-            primary: colors.red.darken1, // #E53935
-            secondary: colors.red.lighten4, // #FFCDD2
-            accent: colors.indigo.base, // #3F51B5
+
+        light: {
+            primary: colors.yellow.darken2,
+            accent: colors.grey.darken3,
+            secondary: colors.amber.darken3,
+            info: colors.teal.lighten1,
+            warning: colors.amber.base,
+            error: colors.deepOrange.accent4,
+            success: colors.green.accent3,
+            btnBg: '#333'
       },
     },
   },

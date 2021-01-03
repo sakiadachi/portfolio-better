@@ -1,7 +1,27 @@
 <template>
     <div class="container">
-        <!-- <button @click="animeEl">Click me</button>
-        <div class="bar"></div> -->
+        <div>
+            <p>HTML, CSS, Sass</p>
+            <v-progress-linear
+                v-model="power"
+                color="amber"
+                height="25"
+            ></v-progress-linear>
+
+            <br />
+
+            <v-progress-linear v-model="skill" color="blue-grey" height="25">
+                <template v-slot:default="{ value }">
+                    <strong>{{ Math.ceil(value) }}%</strong>
+                </template>
+            </v-progress-linear>
+
+            <br />
+
+            <v-progress-linear v-model="knowledge" height="25">
+                <strong>{{ Math.ceil(knowledge) }}%</strong>
+            </v-progress-linear>
+        </div>
     </div>
 </template>
 
@@ -9,32 +29,11 @@
 export default {
     name: 'Anime',
     data() {
-        return {}
-    },
-    methods: {
-        animeEl() {
-            this.$anime({
-                targets: '.bar',
-                width: '100%', // -> from '28px' to '100%',
-                easing: 'easeInOutQuad',
-                direction: 'alternate',
-                duration: 600,
-                loop: false,
-            })
-        },
+        return {
+            skill: 20,
+            knowledge: 33,
+            power: 78,
+        }
     },
 }
 </script>
-
-<style scoped>
-.block {
-    pointer-events: none;
-    position: relative;
-    width: 128px;
-    height: 128px;
-    margin: 1px;
-    background-color: currentColor;
-    font-size: 12px;
-    color: #2c3e50;
-}
-</style>
