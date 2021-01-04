@@ -1,47 +1,52 @@
 <template>
     <div>
-        <div class="pt-8 pl-8 pr-8 pb-16">
-            <div class="profile_link black--text">
-                <h1 class="xlarge">Saki Adachi</h1>
-                <h1 class="">Frontend Developer / Designer Based in Tokyo</h1>
+        <v-container>
+            <div class="pa-4 mx-auto">
+                <div class="profile_link black--text">
+                    <h1 class="xlarge">Saki Adachi</h1>
+                    <h1 class="">
+                        Frontend Developer / Designer Based in Tokyo
+                    </h1>
+                </div>
+                <!-- <p class="my-6">I code and design things.</p> -->
+                <Profile></Profile>
             </div>
-            <!-- <p class="my-6">I code and design things.</p> -->
-            <Profile></Profile>
-        </div>
 
-        <div class="links">
-            <v-row no-gutters>
-                <v-col>
+            <div class="links mt-8 mx-auto">
+                <div class="">
                     <a
                         href="https://codepen.io/sakiadachi88"
                         target="_blank"
-                        class="white--text hov-blue"
+                        class="black--text"
                         >codepen</a
                     >
-
+                </div>
+                <div>
                     <a
                         href="https://dribbble.com/sakiadachi88"
                         target="_blank"
-                        class="white--text hov-yellow"
+                        class="black--text"
                         >Qiita</a
                     >
-
+                </div>
+                <div>
                     <a
                         href="https://dribbble.com/sakiadachi88"
                         target="_blank"
-                        class="white--text hov-pink"
+                        class="black--text"
                         >dribbble</a
                     >
-
+                </div>
+                <div>
                     <a
                         href="https://coconala.com/users/1790932"
                         target="_blank"
-                        class="white--text hov-orange"
+                        class="black--text"
                         >coconala</a
                     >
-                </v-col>
-            </v-row>
-        </div>
+                </div>
+            </div>
+        </v-container>
     </div>
 </template>
 
