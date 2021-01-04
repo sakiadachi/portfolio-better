@@ -23,7 +23,7 @@
                 </div>
                 <div>
                     <a
-                        href="https://dribbble.com/sakiadachi88"
+                        href="https://qiita.com/sakiadachi_88"
                         target="_blank"
                         class="black--text"
                         >Qiita</a
