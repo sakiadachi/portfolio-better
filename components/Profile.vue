@@ -1,7 +1,7 @@
 <template>
     <div class="text-left mt-2">
-        <a href="mailto:hello@sakiadachi.com"
-            ><h3>say hi <span style="font-size: 22px">👋</span></h3></a
+        <a href="mailto:hello@sakiadachi.com" color="primary"
+            ><h3>Say hi <span style="font-size: 22px">👋</span></h3></a
         >
     </div>
 </template>

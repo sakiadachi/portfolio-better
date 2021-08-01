@@ -10,8 +10,8 @@
 
                 <v-list>
                     <v-list-item
-                        v-for="item in items"
-                        :key="item"
+                        v-for="(item, index) in items"
+                        :key="index"
                         @click="() => {}"
                     >
                         <v-list-item-title>{{ item.title }}</v-list-item-title>

@@ -1,16 +1,37 @@
 <template>
     <v-app>
-        <v-main>
-            <!-- <Header></Header> -->
+        <v-app-bar app color="white" flat>
+            <v-container class="py-0 fill-height">
+                <v-spacer></v-spacer>
+                <v-btn
+                    v-for="(link, index) in links"
+                    :key="index"
+                    :href="link.href"
+                    text
+                    :ripple="false"
+                >
+                    {{ link.text }}
+                </v-btn>
 
+                <!-- <v-spacer></v-spacer>
+                <a href="/">
+                    <v-avatar
+                        class="mr-10"
+                        color="grey darken-1"
+                        size="32"
+                    ></v-avatar>
+                </a> -->
+            </v-container>
+        </v-app-bar>
+
+        <v-main>
             <nuxt />
         </v-main>
-
-        <!-- <v-footer padless :absolute="!fixed" app>
-            <v-col class="text-center">
+        <v-footer padless :absolute="!fixed" app class="py-8 grey darken-4">
+            <v-col class="text-center white--text">
                 Saki Adachi <span>&copy; {{ new Date().getFullYear() }}</span>
             </v-col>
-        </v-footer> -->
+        </v-footer>
     </v-app>
 </template>
 
@@ -24,25 +45,34 @@ export default {
     data() {
         return {
             clipped: false,
-            drawer: false,
+            drawer: true,
             fixed: false,
-            items: [
+            links: [
                 {
-                    icon: 'mdi-apps',
-                    title: 'Welcome',
-                    to: '/',
+                    text: 'home',
+                    disabled: false,
+                    href: '/',
                 },
                 {
-                    icon: 'mdi-chart-bubble',
-                    title: 'Inspire',
-                    to: '/inspire',
+                    text: 'works',
+                    disabled: false,
+                    href: '/works',
                 },
-            ],
-            menus: [
-                { title: 'Click Me' },
-                { title: 'Click Me' },
-                { title: 'Click Me' },
-                { title: 'Click Me 2' },
+                {
+                    text: 'sandbox',
+                    disabled: false,
+                    href: '/sandbox',
+                },
+                {
+                    text: 'blog',
+                    disabled: false,
+                    href: '/blog',
+                },
+                {
+                    text: 'contact',
+                    disabled: false,
+                    href: '/contact',
+                },
             ],
             miniVariant: false,
             right: true,

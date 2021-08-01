@@ -2,16 +2,11 @@ html,
 body {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-
+    // font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 }
-
-// main {
-//     background-color: #efe9e5;
-// }
-// .container {
-//     background-color: rgb(224, 112, 43);
-// }
+html{
+  scroll-behavior: smooth;
+}
 
 h1,
 h2, h3, h4, p {
@@ -24,8 +19,6 @@ h2 {
 }
 
 p {
-    font-size: 1rem;
-    line-height: 1.2;
     margin-bottom: 0 !important;
 }
 
@@ -37,12 +30,16 @@ hr {
     overflow: visible;
 }
 
-// ul {
-//     padding: 0 !important;
-// }
-// li {
-//     list-style: none;
-// }
+ul {
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+
+ul.list-bullet li {
+    list-style: disc;
+}
 
 .border-b {
     border-bottom: 1px solid #333;
@@ -52,17 +49,74 @@ hr {
     border-bottom: 1px solid #333;
 }
 
-.box--project {
+.introduction {
+    height: 50vh;
+}
+.container--icons {
+    overflow: hidden;
+    text-align:right;
+    padding: 0 1rem;
+}
+.container--icons:before {
+    background-color: rgba(0, 0, 0, 0.3);
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
     width: 90%;
-    max-width: 800px;
+    right: 0.5rem;
+
+}
+.todo-box {
+    background: rgba( 255, 255, 255, 0.10 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.box.beige {
-    background: #efe9e5;
+.todo-checkbox {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid #E0E0E0;
+
+    cursor: pointer;
+    position: relative;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    &:hover {
+        background-color: rgba($color: #000000, $alpha: 0.1);
+    }
 }
-// .beige {
-//     background:rgb(255, 157, 132)
-// }
+
+.todo-checkbox.checked {
+    border: 1px solid #FFC107;
+    background-color: #FFC107;
+}
+.todo-checkbox.checked::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background-color:#fff;
+    left: 12px;
+    top: 5px;
+}
+
+.todo-checkbox.checked::after {
+    content:"";
+    position: absolute;
+    width: 8px;
+    height: 3px;
+    background-color:#fff;
+    left: 7px;
+    top: 14px;
+}
 
 .anime-background {
     display: flex;
@@ -93,7 +147,7 @@ hr {
 }
 
 h1.xlarge {
-    font-size: 6rem;
+    font-size: 5rem;
     line-height: 1 !important;
 }
 
@@ -211,11 +265,6 @@ h1.xlarge {
     }
 }
 
-.grey {
-    color: grey;
-    font-size: 14px;
-}
-
 .thumb--large {
     width: 60px;
     height: 60px;
@@ -226,15 +275,15 @@ h1.xlarge {
     text-decoration: line-through;
 }
 
-.tasks-list {
-    &:nth-child(n+2) {
-        border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
+ul.tasks-list {
+    li:nth-child(n+2) {
+        border-top: thin solid rgba(0, 0, 0, 0.12);
     }
 }
 
 .profile_link {
     text-decoration: none;
-    padding: 2rem 0;
+    padding: 4rem 0 2rem 0;
     width: 100%;
     // &:hover {
     //     background:rgba(255, 173, 206, 0.8)
@@ -246,6 +295,7 @@ h1.xlarge {
     // position: fixed;
     // bottom: 20%;
     // right: 0;
+    width: 150px;
     background:rgb(49, 213, 107);
     float: right;
     padding: 0.5rem 1rem 0.5rem 2rem;
@@ -259,4 +309,50 @@ h1.xlarge {
             background: yellow;
         }
     }
+}
+
+.title-home {
+    margin: 6rem 0 2rem 0;
+}
+.skill-box {
+    padding: 2rem;
+    border: 1px solid #ffd54f;
+    flex: 1 0;
+}
+
+@media screen and (max-width: 420px) {
+    .skill-box {
+        width: 100%
+    }
+}
+@media screen and (min-width: 780px) {
+    .skill-box:nth-child(2) {
+        margin: 0 1rem;
+    }
+}
+#blog-body {
+    line-height: 1.9;
+}
+.article-container {
+    width: 100%;
+    max-width: 720px;
+    height: 100%;
+    margin: 0 auto 3rem auto;
+}
+
+
+pre {
+    background: #333;
+    white-space: pre;
+    word-wrap: break-word;
+    overflow: auto;
+    padding: 1rem;
+}
+
+pre code {
+    border-radius: 4px;
+    position: relative;
+    color: #fff !important;
+    background-color: transparent !important;
+    padding: 0
 }
