@@ -152,7 +152,7 @@
                         </v-card-actions>
                     </v-card>
                     <div class="works-card--hover">
-                        <v-dialog v-model="dialog" width="500">
+                        <v-dialog v-model="dialog" width="700">
                             <template v-slot:activator="{ on, attrs }">
                                 <v-btn
                                     color="red lighten-2"
@@ -164,23 +164,44 @@
                                 </v-btn>
                             </template>
 
-                            <v-card>
+                            <v-card max-width="700">
                                 <v-card-title class="">
                                     Todo list
                                 </v-card-title>
 
-                                <v-row>
+                                <v-row class="mb-6">
                                     <v-col>
-                                        <v-card-text> </v-card-text>
+                                        <v-card-text
+                                            >シンプルなtodo
+                                            listです。localStorageにデータを保存できます。</v-card-text
+                                        >
+                                        <v-card-text>
+                                            <p>使用言語</p>
+                                            <div class="d-inline-block">
+                                                <v-chip class="ma-1" label>
+                                                    HTML
+                                                </v-chip>
+                                                <v-chip class="ma-1" label>
+                                                    Sass
+                                                </v-chip>
+                                                <v-chip class="ma-1" label>
+                                                    nuxt.js
+                                                </v-chip>
+                                                <v-chip class="ma-1" label>
+                                                    Vuetify
+                                                </v-chip>
+                                                <v-chip class="ma-2" label>
+                                                    vuex
+                                                </v-chip>
+                                            </div>
+                                        </v-card-text>
                                     </v-col>
-                                    <v-col cols="12" sm="6" md="4">
-                                        <img
-                                            src="@/assets/img/todolist.png"
-                                            width="342"
-                                            height="193"
-                                            class="mx-0"
-                                        />
-                                    </v-col>
+                                    <img
+                                        src="@/assets/img/todolist.png"
+                                        width="300"
+                                        class="mx-auto"
+                                        style="object-fit: cover"
+                                    />
                                 </v-row>
                                 <v-divider></v-divider>
 

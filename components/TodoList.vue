@@ -11,10 +11,9 @@
                     :rules="toDoRules"
                     color="grey"
                     class=""
-                    clearable
                     required
                     max-length="80"
-                    @keyup.enter="submit(newItem)"
+                    @keyup.enter="validate(newItem)"
                 >
                     <v-btn
                         slot="append"
@@ -118,6 +117,16 @@ export default {
     computed: {
         todos: {
             get() {
+                // if (
+                //     this.$store.state.todos.list &&
+                //     this.$store.state.todos.list.length > 0
+                // ) {
+                //     return this.$store.state.todos.list
+                // } else {
+                //     this.$store.commit('todos/add', '')
+                //     return []
+                // }
+                // this.$store.commit('initialiseList')
                 return this.$store.state.todos.list
             },
             set(value) {
@@ -143,7 +152,9 @@ export default {
             this.$store.commit('todos/removeDone')
         },
         validate(item) {
-            this.$refs.toDoForm.validate()
+            if (this.$refs.toDoForm.validate()) {
+                this.submit(item)
+            }
         },
     },
 }

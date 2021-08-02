@@ -1,5 +1,8 @@
 export const state = () => ({
-    list: JSON.parse(localStorage.getItem('todolist')),
+    // list: JSON.parse(localStorage.getItem('todolist')),
+    list: localStorage.getItem('todolist')
+        ? JSON.parse(localStorage.getItem('todolist'))
+        : [],
 })
 
 function syncLocalStorage(content) {
@@ -7,6 +10,13 @@ function syncLocalStorage(content) {
 }
 
 export const mutations = {
+    // initialiseList(state) {
+    //     if (localStorage.getItem('todolist')) {
+    //         state.list = JSON.parse(localStorage.getItem('todolist'))
+    //     } else {
+    //         state.list = []
+    //     }
+    // },
     add(state, text) {
         state.list.push({
             title: text,
