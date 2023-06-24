@@ -117,16 +117,6 @@ export default {
     computed: {
         todos: {
             get() {
-                // if (
-                //     this.$store.state.todos.list &&
-                //     this.$store.state.todos.list.length > 0
-                // ) {
-                //     return this.$store.state.todos.list
-                // } else {
-                //     this.$store.commit('todos/add', '')
-                //     return []
-                // }
-                // this.$store.commit('initialiseList')
                 return this.$store.state.todos.list
             },
             set(value) {

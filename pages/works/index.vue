@@ -16,13 +16,9 @@
 </style>
 
 <script>
-// import Todolist from '@/components/TodoList'
 
 export default {
     page: 'works',
-    components: {
-        // Todolist,
-    },
     data() {
         return {}
     },

@@ -1,6 +1,5 @@
 <template>
     <v-container>
-        <!-- <section class="home-section"> -->
         <div
             id="introduction"
             class="introduction mx-auto d-flex flex-column justify-space-between"
@@ -11,36 +10,7 @@
                 <p class="grey--text">I code and design things.</p>
                 <Profile></Profile>
             </div>
-            <!-- <div class="d-flex justify-end">
-                    <div class="links mt-8">
-                        <div class="">
-                            <a
-                                href="https://codepen.io/sakiadachi88"
-                                target="_blank"
-                                class="black--text"
-                                >codepen</a
-                            >
-                        </div>
-                        <div>
-                            <a
-                                href="https://qiita.com/sakiadachi_88"
-                                target="_blank"
-                                class="black--text"
-                                >Qiita</a
-                            >
-                        </div>
-                        <div>
-                            <a
-                                href="https://dribbble.com/sakiadachi88"
-                                target="_blank"
-                                class="black--text"
-                                >dribbble</a
-                            >
-                        </div>
-                    </div>
-                </div> -->
         </div>
-        <!-- </section> -->
 
         <section class="home-section">
             <h2 class="title-home">WHAT I DO</h2>
@@ -98,16 +68,6 @@
                     <p class="grey--text text-sm">2020/01 ~ 2020/04</p>
                 </div>
                 <div class="d-flex justify-end">
-                    <!-- <v-btn
-                        large
-                        elevation="0"
-                        color="grey darken-4 white--text"
-                        flat
-                        :ripple="false"
-                        >Resume<v-icon right dark>
-                            mdi-chevron-right
-                        </v-icon></v-btn
-                    > -->
                     <a
                         href="https://www.linkedin.com/in/saki-adachi"
                         target="_blank"
@@ -134,12 +94,6 @@
                             </h2>
                             A simple Todo list app saving on your browser.
                         </v-card-text>
-                        <!--
-                        <v-card-text>
-                            <v-chip class="mr-2" label> Vue.js </v-chip>
-                            <v-chip class="mr-2" label> nuxt.js </v-chip>
-                            <v-chip class="mr-2" label> database app </v-chip>
-                        </v-card-text> -->
 
                         <v-card-actions>
                             <v-btn
@@ -237,24 +191,6 @@
                         <p>2021.7.30</p>
                     </v-col>
                 </a>
-                <!-- <v-col
-                    cols="12"
-                    sm="8"
-                    class="amber lighten-2 pa-8 mb-4 mx-auto"
-                >
-                    <h3>Title</h3>
-                    <p>Something about the project. Let's talk about it.</p>
-                </v-col>
-                <v-col
-                    cols="12"
-                    sm="8"
-                    class="amber lighten-2 pa-8 mb-4 mx-auto"
-                >
-                    <h3>Todo List</h3>
-                    <p>
-                        Simple todo list web app created with Vue.js and nuxt.js
-                    </p>
-                </v-col> -->
             </div>
         </section>
     </v-container>
@@ -286,12 +222,10 @@
 
 <script>
 import Profile from '@/components/Profile'
-// import Projects from '@/components/Projects'
 
 export default {
     components: {
         Profile,
-        // Projects,
     },
     data() {
         return {

@@ -20,13 +20,6 @@
                                     </v-list-item-title>
                                 </v-list-item-content>
                             </v-list-item>
-                            <!-- <v-list-item :ripple="false" @click="changeTab(2)">
-                                <v-list-item-content>
-                                    <v-list-item-title>
-                                        よく使うFlexBox
-                                    </v-list-item-title>
-                                </v-list-item-content>
-                            </v-list-item> -->
                         </v-list>
                     </v-sheet>
                 </v-col>
@@ -49,15 +42,6 @@
                     >
                         <CssAnimation></CssAnimation>
                     </v-sheet>
-
-                    <!-- <v-sheet
-                        v-if="tab_id == 2"
-                        min-height="70vh"
-                        rounded="lg"
-                        class="tab"
-                    >
-                        <FlexBox></FlexBox>
-                    </v-sheet> -->
                 </v-col>
             </v-row>
         </v-container>
@@ -103,14 +87,12 @@
 </style>
 
 <script>
-// import FlexBox from '@/components/Sandbox/FlexBox'
 import AboutVuetify from '@/components/Sandbox/AboutVuetify'
 import CssAnimation from '@/components/Sandbox/CssAnimation.vue'
 
 export default {
     page: 'sandbox',
     components: {
-        // FlexBox,
         AboutVuetify,
         CssAnimation,
     },

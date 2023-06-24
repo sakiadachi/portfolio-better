@@ -54,11 +54,6 @@
                     </li>
                 </ol>
 
-                <!-- <p>
-                    なんでだ、、、headに読み込むことはできているのに、できない？
-                    default/layoutの最初のページでdefineしないと、head内のjavascriptソースを読み込む順番が決まっておらず、コンポーネントがマウントした時にquillが読み込めないという問題がありました。
-                </p> -->
-
                 <p class="mb-6">
                     解決：components/quillEditorでheadを追加でなく、head追加をpages/index.vueに設置すると、解決しました。
                 </p>

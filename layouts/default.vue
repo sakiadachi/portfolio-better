@@ -12,15 +12,6 @@
                 >
                     {{ link.text }}
                 </v-btn>
-
-                <!-- <v-spacer></v-spacer>
-                <a href="/">
-                    <v-avatar
-                        class="mr-10"
-                        color="grey darken-1"
-                        size="32"
-                    ></v-avatar>
-                </a> -->
             </v-container>
         </v-app-bar>
 
@@ -36,12 +27,7 @@
 </template>
 
 <script>
-// import Header from '@/components/Header'
-
 export default {
-    components: {
-        // Header,
-    },
     data() {
         return {
             clipped: false,

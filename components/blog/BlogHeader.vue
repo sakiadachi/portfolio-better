@@ -2,8 +2,6 @@
     <div id="blog-header" class="blog-header">
         <h1 class="text-lg">{{ header }}</h1>
         <p class="grey--text lighten2">{{ subHeader }}</p>
-
-        <!-- <img :href> -->
     </div>
 </template>
 
