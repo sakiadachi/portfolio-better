@@ -1,20 +1,57 @@
-# homepage-sa
+# essentials
 
-## Build Setup
+## Project setup
 
-```bash
-# install dependencies
-$ npm install
+```
+# yarn
+yarn
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+# npm
+npm install
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+# pnpm
+pnpm install
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+### Compiles and hot-reloads for development
+
+```
+# yarn
+yarn dev
+
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+```
+
+### Compiles and minifies for production
+
+```
+# yarn
+yarn build
+
+# npm
+npm run build
+
+# pnpm
+pnpm build
+```
+
+### Lints and fixes files
+
+```
+# yarn
+yarn lint
+
+# npm
+npm run lint
+
+# pnpm
+pnpm lint
+```
+
+### Customize configuration
+
+See [Configuration Reference](https://vitejs.dev/config/).
