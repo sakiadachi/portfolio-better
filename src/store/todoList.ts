@@ -1,59 +1,68 @@
 // Utilities
 import { defineStore } from 'pinia'
+import { v4 as uuidv4 } from 'uuid'
 
-export type TodoItemType = {
+type TodoItemType = {
+  id: string
   title: string
   done: boolean
 }
 
-interface State {
-  list: string[]
+type State = {
+  todos: TodoItemType[]
   newItemText: string
-  newList: []
-}
-
-function syncLocalStorage(content: TodoItemType[]) {
-  localStorage.setItem('todolist', JSON.stringify(content))
+  toDoRules: [(v: string) => boolean | string]
 }
 
 export const useTodoListStore = defineStore('todoList', {
-  state: () => ({
-    list: localStorage.getItem('todolist')
+  state: (): State => ({
+    todos: localStorage.getItem('todolist')
       ? JSON.parse(localStorage.getItem('todolist') || `[]`)
       : [],
     newItemText: '',
-    newList: [],
     toDoRules: [(v: string) => !!v || 'Cannot save empty todo'],
   }),
   actions: {
-    add(text: string) {
-      this.$state.list.push({
-        title: text,
-        done: false,
-      })
-      syncLocalStorage(this.$state.list)
+    syncLocalStorage(newTodos: TodoItemType[]) {
+      localStorage.setItem('todolist', JSON.stringify(newTodos))
+      this.$state.todos = JSON.parse(localStorage.getItem('todolist') || `[]`)
+      this.$state.newItemText = ''
     },
-    removeItem(index: number) {
-      this.$state.list.splice(index, 1)
-      syncLocalStorage(this.$state.list)
+    add() {
+      const newTodo = {
+        id: uuidv4(),
+        title: this.$state.newItemText,
+        done: false,
+      }
+      const newArr = [...this.$state.todos, newTodo]
+      this.syncLocalStorage(newArr)
+    },
+    removeItem(id: string) {
+      const newArr = this.$state.todos.filter(
+        (todo: TodoItemType) => todo.id !== id
+      )
+      this.syncLocalStorage(newArr)
     },
     removeDone() {
-      const result = this.$state.list.filter((x: TodoItemType) => {
-        return x.done === false
-      })
-      this.$state.list = result
-      syncLocalStorage(this.$state.list)
+      const result = this.$state.todos.filter(
+        (x: TodoItemType) => x.done === false
+      )
+      this.syncLocalStorage(result)
     },
     removeAll() {
-      this.$state.list = []
-      syncLocalStorage(this.$state.list)
+      this.syncLocalStorage([])
     },
     toggle(todo: TodoItemType) {
-      todo.done = !todo.done
-      syncLocalStorage(this.$state.list)
-    },
-    updateTodoList() {
-      syncLocalStorage(this.$state.list)
+      const arr = [...this.$state.todos]
+      const newArr = arr.map((t) => {
+        if (t.id === todo.id)
+          return {
+            ...t,
+            done: !t.done,
+          }
+        return t
+      })
+      this.syncLocalStorage(newArr)
     },
   },
 })
