@@ -1,9 +1,7 @@
+<script lang="ts"></script>
 <template>
-  <v-main>
-    <router-view />
-  </v-main>
+  <div>index</div>
 </template>
-
 <script lang="ts" setup>
 //
 </script>

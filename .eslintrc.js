@@ -1,20 +1,14 @@
 module.exports = {
-  root: true,
   env: {
-    browser: true,
     node: true,
   },
-  parserOptions: {
-    parser: 'babel-eslint',
-  },
   extends: [
-    '@nuxtjs',
-    'prettier',
-    'prettier/vue',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended',
+    'eslint:recommended',
+    "plugin:vue/vue3-recommended",
+    "prettier"
   ],
-  plugins: ['prettier'],
-  // add your custom rules here
-  rules: {},
+  rules: {
+    // override/add rules settings here, such as:
+    // 'vue/no-unused-vars': 'error'
+  }
 }

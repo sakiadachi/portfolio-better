@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Works from '@/views/Works.vue'
 import TodoList from '@/components/works/TodoList.vue'
+import WorksHome from '@/components/works/WorksHome.vue'
 
 const routes = [
   {
@@ -11,29 +12,22 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'Home',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
+        name: 'home',
         component: Home,
       },
-    ],
-  },
-  {
-    path: '/works',
-    name: 'Works',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: Works,
-    children: [
       {
-        // UserProfile will be rendered inside User's <router-view>
-        // when /user/:id/profile is matched
-        path: 'todoList',
-        component: TodoList,
+        path: '/works',
+        name: 'works',
+        component: Works,
+        children: [
+          { path: '/', name: 'works', component: WorksHome },
+          {
+            path: '/works/todoList',
+            component: TodoList,
+          },
+        ],
       },
-    ]
+    ],
   },
 ]
 
