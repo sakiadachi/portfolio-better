@@ -5,7 +5,7 @@ import Works from '@/views/Works.vue'
 import Blog from '@/views/Blog.vue'
 import TodoList from '@/components/works/TodoList.vue'
 import WorksHome from '@/components/works/WorksHome.vue'
-import ResizableElement from '@/components/blog/resizableElement.vue'
+import ResizableElement from '@/components/blog/ResizableElement/ResizableElement.vue'
 
 const routes = [
   {

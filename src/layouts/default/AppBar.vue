@@ -1,18 +1,3 @@
-<template>
-  <v-app-bar app color="white" flat>
-    <v-container class="py-0 fill-height">
-      <v-spacer></v-spacer>
-      <v-btn
-        v-for="(link, index) in links"
-        :key="index"
-        :href="link.href"
-        :ripple="false"
-      >
-        {{ link.text }}
-      </v-btn>
-    </v-container>
-  </v-app-bar>
-</template>
 <script lang="ts" setup>
 const links = [
   {
@@ -37,3 +22,19 @@ const links = [
   },
 ]
 </script>
+
+<template>
+  <v-app-bar app color="white" flat>
+    <v-container class="py-0 fill-height">
+      <v-spacer></v-spacer>
+      <v-btn
+        v-for="(link, index) in links"
+        :key="index"
+        :href="link.href"
+        :ripple="false"
+      >
+        {{ link.text }}
+      </v-btn>
+    </v-container>
+  </v-app-bar>
+</template>
