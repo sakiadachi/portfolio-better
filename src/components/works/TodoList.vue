@@ -30,8 +30,6 @@ const validate = () => {
           type="text"
           placeholder="New task"
           :rules="store.toDoRules"
-          color="grey"
-          required
           max-length="80"
           append-inner-icon="mdi-plus"
           @click:append-inner="validate()"

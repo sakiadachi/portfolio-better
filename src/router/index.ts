@@ -2,8 +2,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Works from '@/views/Works.vue'
+import Blog from '@/views/Blog.vue'
 import TodoList from '@/components/works/TodoList.vue'
 import WorksHome from '@/components/works/WorksHome.vue'
+import ResizableElement from '@/components/blog/resizableElement.vue'
 
 const routes = [
   {
@@ -24,6 +26,17 @@ const routes = [
           {
             path: '/works/todoList',
             component: TodoList,
+          },
+        ],
+      },
+      {
+        path: '/blog',
+        name: 'blog',
+        component: Blog,
+        children: [
+          {
+            path: 'resizable-element',
+            component: ResizableElement,
           },
         ],
       },
