@@ -1,7 +1,10 @@
+<template>
+  <v-container>
+    <blog-card></blog-card>
+  </v-container>
+</template>
 <script lang="ts" setup>
-import HelloWorld from '@/components/HelloWorld.vue'
+import BlogCard from '@/components/blog/BlogCard.vue'
 </script>
 
-<template>
-  <HelloWorld />
-</template>
+<style lang="scss" scoped></style>

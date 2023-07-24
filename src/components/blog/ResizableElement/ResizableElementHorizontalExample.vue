@@ -1,19 +1,47 @@
+<template>
+  <div
+    ref="resizableExampleRef"
+    :style="{ '--width': width }"
+    class="resizable-element-horizontal d-flex w-full"
+  >
+    <v-list class="resizable-element-horizontal__menu-list">
+      <v-list-subheader>Tonal Variant</v-list-subheader>
+
+      <v-list-item
+        v-for="(item, i) in items"
+        :key="i"
+        :value="item"
+        color="primary"
+        variant="tonal"
+      >
+        <v-list-item-title v-text="item.title"></v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <div
+      @mousedown="onMousedown"
+      class="resizable-element-horizontal__resize-bar h-full bg-yellow"
+    ></div>
+    <div class="resizable-element-horizontal__tag-list-body bg-pink">
+      <!-- <v-chip-group multiple selected-class="text-primary" class="">
+        <v-chip v-for="n in 45" :key="n"> タグの名前 {{ n }} </v-chip>
+      </v-chip-group> -->
+    </div>
+  </div>
+</template>
 <script lang="ts" setup>
 import { ref } from 'vue'
 
 const resizableExampleRef = ref<HTMLDivElement | null>(null)
-const tagListHeight = ref('120px')
+const width = ref('120px')
 
 const onMousedown = () => {
   const resizableBarHeight = 16 * 2
   const startDragging = (e: MouseEvent) => {
-    const windowHeight = window.innerHeight
-
+    const windowWidth = window.innerWidth
+    console.log(e)
     if (resizableExampleRef.value) {
-      const { y } = resizableExampleRef.value.getBoundingClientRect()
-      tagListHeight.value = `${
-        windowHeight - y - resizableBarHeight - e.pageY
-      }px`
+      const { x } = resizableExampleRef.value.getBoundingClientRect()
+      width.value = `${windowWidth - x - 2 - e.pageX}px`
     }
   }
   const stopDragging = () => {
@@ -63,46 +91,22 @@ const items = [
   },
 ]
 </script>
-<template>
-  <div
-    ref="resizableExampleRef"
-    :style="{ '--height': tagListHeight }"
-    class="resizable-element-example"
-  >
-    <v-list
-      :items="items"
-      item-props
-      lines="three"
-      class="resizable-element-example__cat-list"
-    >
-      <template v-slot:subtitle="{ subtitle }">
-        <div v-html="subtitle"></div>
-      </template>
-    </v-list>
-    <div
-      @mousedown="onMousedown"
-      class="resizable-element-example__resize-bar bg-black w-full h-full bg-yellow"
-    />
-    <div class="resizable-element-example__tag-list-body overflow-y-auto">
-      <v-chip-group multiple selected-class="text-primary" class="w-full">
-        <v-chip v-for="n in 45" :key="n"> タグの名前 {{ n }} </v-chip>
-      </v-chip-group>
-    </div>
-  </div>
-</template>
 <style lang="scss" scoped>
-.resizable-element-example {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 100%;
-  position: relative;
-  grid-template-rows: 1fr 2rem var(--height);
-  &__cat-list {
-    grid-area: 1 / 1 / 2 / 2;
+.resizable-element-horizontal {
+  // display: grid;
+  // height: 100%;
+  // width: 100%l
+  // grid-template-columns: 100%;
+  // position: relative;
+  // grid-template-rows: 1fr 2rem var(--width);
+  &__menu-list {
+    // grid-area: 1 / 1 / 2 / 2;
+    flex-basis: var(--width);
   }
   &__resize-bar {
     grid-area: 2 / 1 / 3 / 2;
-    cursor: row-resize;
+    cursor: col-resize;
+    width: 2px;
   }
   &__tag-list-body {
     grid-area: 3 / 1 / 4 / 2;

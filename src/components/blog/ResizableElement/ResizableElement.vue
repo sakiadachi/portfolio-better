@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import dayjs from 'dayjs'
 import ResizableElementExample from './ResizableElementExample.vue'
+import ResizableElementHorizontalExample from './ResizableElementHorizontalExample.vue'
 
 const dateTime = dayjs('2023/07/16 17:00:00')
 </script>
@@ -19,6 +20,9 @@ const dateTime = dayjs('2023/07/16 17:00:00')
       スマホでよくある、エレメントの上部を上下に引っ張って高さを変えるような実装をご紹介します。
       <div class="resizable-element__working-example mx-auto border-md">
         <resizable-element-example />
+      </div>
+      <div class="resizable-element__working-example mx-auto border-md mt-12">
+        <resizable-element-horizontal-example />
       </div>
     </v-card-text>
   </v-card>

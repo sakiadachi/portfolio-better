@@ -1,46 +1,41 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
-import Works from '@/views/Works.vue'
-import Blog from '@/views/Blog.vue'
-import TodoList from '@/components/works/TodoList.vue'
-import WorksHome from '@/components/works/WorksHome.vue'
+import Contact from '@/views/Contact.vue'
+import TodoList from '@/components/blog/todoList/TodoList.vue'
 import ResizableElement from '@/components/blog/ResizableElement/ResizableElement.vue'
+import BlogVue from '@/views/Blog.vue'
+import BlogCardVue from '@/components/blog/BlogCard.vue'
 
 const routes = [
   {
     path: '/',
-    component: () => import('@/layouts/default/Default.vue'),
+    name: 'home',
+    component: Home,
+  },
+  {
+    path: '/blog',
+    name: 'blog',
+    component: BlogVue,
     children: [
       {
-        path: '',
-        name: 'home',
-        component: Home,
-      },
-      {
-        path: '/works',
-        name: 'works',
-        component: Works,
-        children: [
-          { path: '/', name: 'works', component: WorksHome },
-          {
-            path: '/works/todoList',
-            component: TodoList,
-          },
-        ],
-      },
-      {
         path: '/blog',
-        name: 'blog',
-        component: Blog,
-        children: [
-          {
-            path: 'resizable-element',
-            component: ResizableElement,
-          },
-        ],
+        component: BlogCardVue,
+      },
+      {
+        path: '/blog/resizable-element',
+        component: ResizableElement,
+      },
+      {
+        path: '/blog/todo-list',
+        component: TodoList,
       },
     ],
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
   },
 ]
 
