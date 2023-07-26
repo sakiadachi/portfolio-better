@@ -24,9 +24,9 @@ const links = [
     href: '/blog/todo-list',
   },
   {
-    text: '3',
+    text: 'Intersection Observer',
     disabled: false,
-    href: '/',
+    href: '/blog/intersection-observer',
   },
 ]
 </script>
