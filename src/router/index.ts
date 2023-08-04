@@ -6,7 +6,7 @@ import TodoList from '@/components/blog/todoList/TodoList.vue'
 import ResizableElement from '@/components/blog/ResizableElement/ResizableElement.vue'
 import BlogVue from '@/views/Blog.vue'
 import BlogCardVue from '@/components/blog/BlogCard.vue'
-import InterSectionObserverindex from '@/components/blog/IntersectionObserver/IntersectionObserverIndex.vue'
+import InterSectionObserverIndex from '@/components/blog/IntersectionObserver/IntersectionObserverIndex.vue'
 
 const routes = [
   {
@@ -33,7 +33,7 @@ const routes = [
       },
       {
         path: '/blog/intersection-observer',
-        component: InterSectionObserverindex,
+        component: InterSectionObserverIndex,
       },
     ],
   },
