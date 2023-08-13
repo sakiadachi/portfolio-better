@@ -1,7 +1,11 @@
 <template>
   <v-app-bar class="app-bar" flat>
     <v-container class="fill-height d-flex align-center">
-      <v-avatar class="me-10 ms-4" color="grey-darken-1" size="32"></v-avatar>
+      <v-app-bar-nav-icon class="me-10 ms-4">
+        <v-btn href="/" icon :ripple="false">
+          <v-avatar :image="LogoRound"></v-avatar>
+        </v-btn>
+      </v-app-bar-nav-icon>
 
       <v-btn
         v-for="link in links"
@@ -25,6 +29,7 @@
   </v-app-bar>
 </template>
 <script lang="ts" setup>
+import LogoRound from '@/assets/logo_round.png'
 const links = [
   {
     text: 'home',
