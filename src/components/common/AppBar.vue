@@ -27,14 +27,14 @@
 <script lang="ts" setup>
 const links = [
   {
-    text: 'blog',
+    text: 'home',
     disabled: false,
     href: '/',
   },
   {
-    text: 'contact',
+    text: 'blog',
     disabled: false,
-    href: '/contact',
+    href: '/blog',
   },
 ]
 </script>

@@ -1,10 +1,8 @@
 <template>
-  <v-container>
-    <blog-card></blog-card>
+  <v-container class="h-100">
+    <contact-home />
   </v-container>
 </template>
 <script lang="ts" setup>
-import BlogCard from '@/components/blog/BlogCard.vue'
+import ContactHome from '@/components/contact/ContactHome.vue'
 </script>
-
-<style lang="scss" scoped></style>

@@ -1,8 +1,6 @@
 <template>
   <v-card flat>
-    <v-card-title
-      >ドラッグで、上下左右リサイズできるエレメントを作る【TypeScript】</v-card-title
-    >
+    <v-card-title>ドラッグで、カラムのリサイズ【TypeScript】</v-card-title>
     <v-card-subtitle>
       <time :datetime="`${dateTime.valueOf()}`">{{
         dateTime.format('YY/MM/DD')
@@ -29,8 +27,7 @@
 
       <h3 class="mt-8">#1 横方向のリサイズ</h3>
       <p>
-        ウィンドウの内部の高さから、mouseupイベントが発火されたページ全体からの相対Y
-        （垂直）座標を引いた値を取得する。
+        ウィンドウの内部の幅から、mouseupイベントが発火されたページ全体からの相対X座標の値を取得する。
       </p>
       <pre class="resizable-element__pre bg-grey-lighten-2 pa-4 rounded mt-8">
 // React
@@ -53,7 +50,7 @@ export default function BoxLeft() {
 }
 </pre
       >
-      <p>
+      <p class="my-8">
         See more:
         <a
           href="https://github.com/sakiadachi/resizable-elements"

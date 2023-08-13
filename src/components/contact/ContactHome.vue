@@ -8,34 +8,34 @@
           class="contact-home__card pa-8 rounded-xl"
         >
           <v-card-title class="font-weight-bold text-h4"
-            >こんにちは、👋</v-card-title
+            >こんにちは👋</v-card-title
           >
-          <v-card-text class="contact-home__intro-text text-body-1 mt-8 mb-3">{{
+          <v-card-text class="contact-home__intro-text text-body-1 mt-8">{{
             intro
           }}</v-card-text>
 
-          <v-card-actions class="d-flex justify-end px-8">
-            <ul class="">
-              <li><a href="mailto:hello@sakiadachi.com">email</a></li>
-              <li>
-                <a href="https://github.com/sakiadachi" target="_blank"
-                  >github</a
-                >
-              </li>
-            </ul>
+          <v-card-actions class="px-4">
+            <contact-links />
           </v-card-actions>
         </v-card>
       </div>
     </v-col>
-    <v-col cols="10" class="pt-8">
+    <v-col cols="10" class="my-12">
       <ascii-art-computer />
+    </v-col>
+    <v-col cols="10" class="my-12">
+      <h2>ログ</h2>
+      <p class="mb-8">実装方法のブログなど</p>
+      <blog-card />
     </v-col>
   </v-row>
 </template>
 <script lang="ts" setup>
 import AsciiArtComputer from './AsciiArtComputer.vue'
+import BlogCard from '../blog/BlogCard.vue'
+import ContactLinks from '@/components/common/ContactLinks.vue'
 const intro =
-  '足立 咲\nフリーランス フロントエンドエンジニア,デザイナー（ごく稀に）\n\nVue / React / Flutter / TypeScript / JavaScript\nもそもそWebアプリ作っています。\n社会や個人が嬉しくなる・役にたつプロダクトを作りたい！\n\n東京在住\nラーメン、猫、コリドラスとオトシンクルスが好きです🐠'
+  '足立 咲\nフリーランス フロントエンドエンジニア,デザイナー（ごく稀に）\n\nVue / React / Flutter / TypeScript / JavaScript\n\n東京在住\nラーメン、猫、コリドラスとオトシンクルスが好きです🐠'
 </script>
 <style lang="scss" scoped>
 .contact-home {

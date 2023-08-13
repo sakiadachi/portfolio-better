@@ -1,12 +1,10 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
-import Contact from '@/views/Contact.vue'
 import TodoList from '@/components/blog/todoList/TodoList.vue'
 import ResizableElement from '@/components/blog/ResizableElement/ResizableElement.vue'
 import BlogVue from '@/views/Blog.vue'
-import BlogCardVue from '@/components/blog/BlogCard.vue'
-import InterSectionObserverIndex from '@/components/blog/IntersectionObserver/IntersectionObserverIndex.vue'
+import BlogHome from '@/components/blog/BlogHome.vue'
+import Home from '@/views/Home.vue'
 
 const routes = [
   {
@@ -21,7 +19,7 @@ const routes = [
     children: [
       {
         path: '/blog',
-        component: BlogCardVue,
+        component: BlogHome,
       },
       {
         path: '/blog/resizable-element',
@@ -31,16 +29,7 @@ const routes = [
         path: '/blog/todo-list',
         component: TodoList,
       },
-      {
-        path: '/blog/intersection-observer',
-        component: InterSectionObserverIndex,
-      },
     ],
-  },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: Contact,
   },
 ]
 

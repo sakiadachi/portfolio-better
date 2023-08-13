@@ -7,16 +7,11 @@
             <v-list-item
               v-for="link in links"
               :key="link.text"
-              link
-              :href="link.href"
+              :to="link.href"
+              active-class="blog-link--active"
+              exact
             >
               <v-list-item-title> {{ link.text }} </v-list-item-title>
-            </v-list-item>
-
-            <v-divider class="my-2"></v-divider>
-
-            <v-list-item link color="grey-lighten-4">
-              <v-list-item-title> Refresh </v-list-item-title>
             </v-list-item>
           </v-list>
         </v-sheet>
@@ -31,23 +26,34 @@
   </v-container>
 </template>
 <script lang="ts" setup>
+import router from '@/router'
 const links = [
-  {
-    text: 'todo list',
-    disabled: false,
-    href: '/blog/todo-list',
-  },
   {
     text: 'resizable element',
     disabled: false,
     href: '/blog/resizable-element',
   },
   {
-    text: '3',
+    text: 'todo list',
     disabled: false,
-    href: '/',
+    href: '/blog/todo-list',
+  },
+  {
+    text: '/',
+    disabled: false,
+    href: '/blog',
   },
 ]
+
+const currentRoutePath = router.currentRoute.value.path
+console.log(currentRoutePath)
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.blog-link {
+  &--active::after {
+    content: '⭐️';
+    display: block;
+  }
+}
+</style>
