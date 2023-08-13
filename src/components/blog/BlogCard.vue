@@ -1,7 +1,12 @@
 <template>
   <v-row>
     <v-col v-for="link in links" :key="link.text" cols="5">
-      <v-card class="blog-card__card" height="200" :to="link.href" theme="dark">
+      <v-card
+        class="blog-card__card"
+        max-height="200"
+        :to="link.href"
+        theme="dark"
+      >
         <v-img :src="link.bgIcon">
           <v-card-title class="text-white" v-text="link.text"></v-card-title
         ></v-img>

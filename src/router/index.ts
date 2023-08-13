@@ -18,7 +18,7 @@ const routes = [
     component: BlogVue,
     children: [
       {
-        path: '/blog',
+        path: '',
         component: BlogHome,
       },
       {

@@ -44,16 +44,4 @@ const links = [
     href: '/blog',
   },
 ]
-
-const currentRoutePath = router.currentRoute.value.path
-console.log(currentRoutePath)
 </script>
-
-<style lang="scss" scoped>
-.blog-link {
-  &--active::after {
-    content: '⭐️';
-    display: block;
-  }
-}
-</style>
