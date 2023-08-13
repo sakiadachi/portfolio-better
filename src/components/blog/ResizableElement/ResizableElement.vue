@@ -55,7 +55,7 @@ export default function BoxLeft() {
         <a
           href="https://github.com/sakiadachi/resizable-elements"
           target="_blank"
-          >github repo</a
+          >GitHub Repo</a
         >
       </p>
 
