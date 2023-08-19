@@ -1,6 +1,6 @@
 <template>
-  <v-row>
-    <v-col v-for="link in links" :key="link.text" cols="5">
+  <v-row class="d-flex">
+    <v-col v-for="link in links" :key="link.text" style="flex-basis: 200px">
       <v-card
         class="blog-card__card"
         max-height="200"

@@ -1,6 +1,6 @@
 <template>
   <v-card flat>
-    <v-card-title>ドラッグで、カラムのリサイズ【TypeScript】</v-card-title>
+    <h1 class="pa-4">ドラッグで、カラムのリサイズ【TypeScript】</h1>
     <v-card-subtitle>
       <time :datetime="`${dateTime.valueOf()}`">{{
         dateTime.format('YY/MM/DD')
@@ -29,7 +29,10 @@
       <p>
         ウィンドウの内部の幅から、mouseupイベントが発火されたページ全体からの相対X座標の値を取得する。
       </p>
-      <pre class="resizable-element__pre bg-grey-lighten-2 pa-4 rounded mt-8">
+      <pre
+        class="resizable-element__pre bg-grey-lighten-2 pa-4 rounded mt-8"
+        :class="{ 'resizable-element__pre--mobile': mobile }"
+      >
 // React
 export default function BoxLeft() {
   // カラムの幅の初期値(px)
@@ -72,7 +75,10 @@ export default function BoxLeft() {
         ページ全体のから、mouseupイベントが発火された位置の
         ページ全体からの相対Y （垂直）座標を引いた値を取得する。
       </p>
-      <pre class="resizable-element__pre bg-grey-lighten-2 pa-4 rounded my-8">
+      <pre
+        class="resizable-element__pre bg-grey-lighten-2 pa-4 rounded my-8"
+        :class="{ 'resizable-element__pre--mobile': mobile }"
+      >
 // Vue
 // 高さの初期値
 const height = ref("120px");
@@ -108,12 +114,18 @@ const onMousedown = () => {
 </template>
 <script lang="ts" setup>
 import dayjs from 'dayjs'
+import { useDisplay } from 'vuetify/lib/framework.mjs'
+const { mobile } = useDisplay()
+
 const dateTime = dayjs('2023/07/16 17:00:00')
 </script>
 <style lang="scss" scoped>
 .resizable-element {
   &__pre {
     tab-size: 2;
+    &--mobile {
+      white-space: pre-line;
+    }
   }
 }
 </style>
