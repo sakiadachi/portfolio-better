@@ -1,11 +1,11 @@
 <template>
   <v-row class="d-flex justify-center h-100 pt-8">
-    <v-col cols="10" class="position-relative w-full">
+    <v-col cols="12" class="position-relative w-full">
       <div class="contact-home__card-container">
         <v-card
           elevation="0"
           position="relative"
-          class="contact-home__card pa-8 rounded-xl"
+          class="contact-home__card pa-4 rounded-xl"
         >
           <v-card-title class="font-weight-bold text-h4"
             >こんにちは👋</v-card-title

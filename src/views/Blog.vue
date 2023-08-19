@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col cols="3">
+    <v-row class="d-flex" :class="{ 'flex-column-reverse': mobile }">
+      <v-col :cols="mobile ? 12 : 3">
         <v-sheet rounded="lg">
           <v-list rounded="lg">
             <v-list-item
@@ -17,7 +17,7 @@
         </v-sheet>
       </v-col>
 
-      <v-col cols="9">
+      <v-col :cols="mobile ? 12 : 9">
         <v-sheet min-height="70vh" rounded="lg">
           <router-view />
         </v-sheet>
@@ -26,7 +26,10 @@
   </v-container>
 </template>
 <script lang="ts" setup>
-import router from '@/router'
+import { useDisplay } from 'vuetify'
+
+const { mobile } = useDisplay()
+
 const links = [
   {
     text: 'resizable element',
