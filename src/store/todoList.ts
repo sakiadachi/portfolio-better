@@ -39,13 +39,13 @@ export const useTodoListStore = defineStore('todoList', {
     },
     removeItem(id: string) {
       const newArr = this.$state.todos.filter(
-        (todo: TodoItemType) => todo.id !== id
+        (todo: TodoItemType) => todo.id !== id,
       )
       this.syncLocalStorage(newArr)
     },
     removeDone() {
       const result = this.$state.todos.filter(
-        (x: TodoItemType) => x.done === false
+        (x: TodoItemType) => x.done === false,
       )
       this.syncLocalStorage(result)
     },
