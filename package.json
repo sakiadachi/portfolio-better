@@ -6,8 +6,10 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore",
-    "format": "prettier -w --ignore-path .gitignore --ignore-path .prettierignore ."
+    "format": "prettier -w --ignore-path .gitignore --ignore-path .prettierignore .",
+    "lint:prettier": "prettier -c --ignore-path .gitignore .",
+    "lint:eslint": "eslint . --fix --ignore-path .gitignore",
+    "lint": "npm run lint:prettier && npm run lint:eslint"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
