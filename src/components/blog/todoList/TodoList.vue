@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { useTodoListStore } from '@/store/todoList'
-import { Ref, ref } from 'vue'
+import { ref } from 'vue'
 import { VForm } from 'vuetify/lib/components/index.mjs'
 
 const store = useTodoListStore()
-const toDoForm: Ref<typeof VForm | null> = ref(null)
+const toDoForm = ref<typeof VForm | null>(null)
 
 const validate = () => {
   if (toDoForm.value?.validate()) {
@@ -65,13 +65,13 @@ const validate = () => {
                   class="d-flex align-center justify-space-between pl-0"
                 >
                   <v-checkbox
-                    :model-value="item.done"
-                    @update:model-value="store.toggle(item)"
                     hide-details
                     label="black"
                     color="black"
+                    :model-value="item.done"
+                    @update:model-value="store.toggle(item)"
                   >
-                    <template v-slot:label>
+                    <template #label>
                       <span :class="{ 'todo-list__item--done': item.done }">{{
                         item.title
                       }}</span>

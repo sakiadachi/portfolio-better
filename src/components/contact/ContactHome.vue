@@ -35,7 +35,7 @@ import AsciiArtComputer from './AsciiArtComputer.vue'
 import BlogCard from '../blog/BlogCard.vue'
 import ContactLinks from '@/components/common/ContactLinks.vue'
 const intro =
-  '足立 咲\nフリーランス フロントエンドエンジニア,デザイナー（ごく稀に）\n\nVue / React / Flutter / TypeScript / JavaScript\n\n東京在住\nラーメン、猫、コリドラスとオトシンクルスが好きです🐠'
+  '足立 咲\nフリーランス フロントエンドエンジニア\n\nVue / React / Flutter / TypeScript / JavaScript\n\n東京在住\nラーメン、猫、コリドラスとオトシンクルスが好きです🐠'
 </script>
 <style lang="scss" scoped>
 .contact-home {
