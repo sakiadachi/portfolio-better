@@ -8,7 +8,8 @@
       </v-app-bar-nav-icon>
 
       <v-btn
-        v-for="link in links"
+        v-for="(link, index) in links"
+        :key="index"
         :href="link.href"
         variant="text"
         :ripple="false"

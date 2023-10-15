@@ -1,15 +1,15 @@
 <template>
   <v-row class="d-flex">
-    <v-col v-for="link in links" :key="link.text" style="flex-basis: 200px">
+    <v-col v-for="l in links" :key="l.text" style="flex-basis: 200px">
       <v-card
         class="blog-card__card"
         max-height="200"
-        :to="link.href"
+        :to="l.href"
         theme="dark"
       >
-        <v-img :src="link.bgIcon">
-          <v-card-title class="text-white" v-text="link.text"></v-card-title
-        ></v-img>
+        <v-img :src="l.bgIcon">
+          <v-card-title class="text-white">{{ l.text }}</v-card-title></v-img
+        >
       </v-card>
     </v-col>
   </v-row>
@@ -19,8 +19,14 @@ import check from '@/assets/blog/check.png'
 import colResize from '@/assets/blog/col-resize.png'
 
 defineProps({
-  link: String,
-  title: String,
+  link: {
+    type: String,
+    default: '',
+  },
+  title: {
+    type: String,
+    default: '',
+  },
 })
 const links = [
   {
