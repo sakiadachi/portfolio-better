@@ -41,6 +41,11 @@ const links = [
     href: '/blog/todo-list',
     bgIcon: check,
   },
+  {
+    text: 'clipboard App',
+    disabled: false,
+    href: '/blog/clipboard-app',
+  },
 ]
 </script>
 <style lang="scss" scoped>

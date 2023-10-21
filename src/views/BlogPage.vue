@@ -42,6 +42,11 @@ const links = [
     href: '/blog/todo-list',
   },
   {
+    text: 'clipboard App',
+    disabled: false,
+    href: '/blog/clipboard-app',
+  },
+  {
     text: '/',
     disabled: false,
     href: '/blog',
