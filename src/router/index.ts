@@ -19,6 +19,11 @@ const routes = [
     component: BlogVue,
     children: [
       {
+        path: '/blog/clipboard-app',
+        component: ClipboardApp,
+        name: 'blog-clipboard-app',
+      },
+      {
         path: '',
         component: BlogHome,
         name: 'blog-home',
@@ -32,11 +37,6 @@ const routes = [
         path: '/blog/todo-list',
         component: TodoList,
         name: 'blog-todo-list',
-      },
-      {
-        path: '/blog/clipboard-app',
-        component: ClipboardApp,
-        name: 'blog-clipboard-app',
       },
     ],
   },

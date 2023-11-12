@@ -4,6 +4,7 @@
       <v-card
         class="blog-card__card"
         max-height="200"
+        min-height="200"
         :to="l.href"
         theme="dark"
       >
@@ -30,6 +31,11 @@ defineProps({
 })
 const links = [
   {
+    text: 'clipboard App',
+    disabled: false,
+    href: '/blog/clipboard-app',
+  },
+  {
     text: 'Resizable Element',
     disabled: false,
     href: '/blog/resizable-element',
@@ -40,11 +46,6 @@ const links = [
     disabled: false,
     href: '/blog/todo-list',
     bgIcon: check,
-  },
-  {
-    text: 'clipboard App',
-    disabled: false,
-    href: '/blog/clipboard-app',
   },
 ]
 </script>

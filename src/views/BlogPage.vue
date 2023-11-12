@@ -32,6 +32,11 @@ const { mobile } = useDisplay()
 
 const links = [
   {
+    text: 'clipboard App',
+    disabled: false,
+    href: '/blog/clipboard-app',
+  },
+  {
     text: 'resizable element',
     disabled: false,
     href: '/blog/resizable-element',
@@ -41,11 +46,7 @@ const links = [
     disabled: false,
     href: '/blog/todo-list',
   },
-  {
-    text: 'clipboard App',
-    disabled: false,
-    href: '/blog/clipboard-app',
-  },
+
   {
     text: '/',
     disabled: false,
