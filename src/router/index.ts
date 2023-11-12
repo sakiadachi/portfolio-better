@@ -5,6 +5,7 @@ import ResizableElement from '@/components/blog/ResizableElement/ResizableElemen
 import BlogVue from '@/views/BlogPage.vue'
 import BlogHome from '@/components/blog/BlogHome.vue'
 import Home from '@/views/HomePage.vue'
+import ClipboardApp from '@/components/blog/clipboardApp/ClipboardApp.vue'
 
 const routes = [
   {
@@ -17,6 +18,11 @@ const routes = [
     name: 'blog',
     component: BlogVue,
     children: [
+      {
+        path: '/blog/clipboard-app',
+        component: ClipboardApp,
+        name: 'blog-clipboard-app',
+      },
       {
         path: '',
         component: BlogHome,
