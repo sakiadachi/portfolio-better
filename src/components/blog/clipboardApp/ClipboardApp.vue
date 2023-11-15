@@ -36,7 +36,9 @@
           </li>
           <li>
             プロダクションリンク:
-            <a href="https://joyful-faloodeh-f040f9.netlify.app/"
+            <a
+              href="https://joyful-faloodeh-f040f9.netlify.app/"
+              target="_blank"
               >Clipboard App</a
             >
           </li>
@@ -116,7 +118,7 @@
           Djangoや、Django REST
           Framework内の作業はチュートリアルを勉強することで事足りましたが、バックエンドのデプロイとバックエンドのCSRF認証の設定周りは、<a
             href="mailto:hello@justus.pw"
-            >詳しい方(夫)</a
+            >詳しい方</a
           >にお手伝いいただきました。
         </p>
 
@@ -124,6 +126,33 @@
           バックエンドの構築ができたので、次はモバイルアプリを作成したいと思っています📱🤩
         </p>
         <p>よろしければ、感想お聞かせください！</p>
+
+        <ul class="mt-2 bg-grey-lighten-3 py-2">
+          <li>
+            Github:
+            <a
+              href="https://github.com/sakiadachi/emoji-clipboard-app"
+              target="_blank"
+              >フロントエンド</a
+            >
+          </li>
+          <li>
+            Github:
+            <a
+              href="https://github.com/sakiadachi/clipboard_project"
+              target="_blank"
+              >バックエンド</a
+            >
+          </li>
+          <li>
+            プロダクションリンク:
+            <a
+              href="https://joyful-faloodeh-f040f9.netlify.app/"
+              target="_blank"
+              >Clipboard App</a
+            >
+          </li>
+        </ul>
       </section>
 
       <section>
